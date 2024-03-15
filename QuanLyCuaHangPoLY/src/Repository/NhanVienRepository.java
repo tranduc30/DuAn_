@@ -4,13 +4,14 @@
  */
 package Repository;
 
+import Hepper.JDBCHeper;
 import Model.NhanVien;
 import Model.NhanVien1;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import quanlypolybob.Hepper.JDBCHeper;
+
 
 /**
  *
