@@ -208,6 +208,11 @@ public class main extends javax.swing.JFrame {
         lblBanHang.setForeground(new java.awt.Color(242, 242, 242));
         lblBanHang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/sell.png"))); // NOI18N
         lblBanHang.setText("Bán Hàng");
+        lblBanHang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblBanHangMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnBanHangLayout = new javax.swing.GroupLayout(pnBanHang);
         pnBanHang.setLayout(pnBanHangLayout);
@@ -523,7 +528,7 @@ public class main extends javax.swing.JFrame {
         resetColor(lblKhuyenMai);
         resetColor(lblNhanVien);
         resetColor(lblSanPham);
-//        showPanel(new BanHangJPanel(lblTenNV.getText(), email));
+        showPanel(new BanHangJPanel(lblTenNV.getText(), email));
     }//GEN-LAST:event_pnBanHangMouseClicked
 
     private void lblNhanVienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNhanVienMouseClicked
@@ -790,6 +795,28 @@ public class main extends javax.swing.JFrame {
         resetColor(lblKhachHang);
                 showPanel(new TrangChuJPanel());
     }//GEN-LAST:event_lblTrangChuMouseClicked
+
+    private void lblBanHangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBanHangMouseClicked
+        // TODO add your handling code here:
+        setColorJpanel(pnBanHang);
+        resetColorJpane(pnThongKe);
+        resetColorJpane(pnNhanVien);
+        resetColorJpane(pnHoaDon);
+        resetColorJpane(pnKhachHang);
+        resetColorJpane(pnSanPham);
+        resetColorJpane(pnKhuyenMai);
+        resetColorJpane(pnTrangChu);
+
+        setColor(lblBanHang);
+        resetColor(lblHoaDon);
+        resetColor(lblThongke);
+        resetColor(lblKhachHang);
+        resetColor(lblTrangChu);
+        resetColor(lblKhuyenMai);
+        resetColor(lblNhanVien);
+        resetColor(lblSanPham);
+        showPanel(new BanHangJPanel(lblTenNV.getText(), email));
+    }//GEN-LAST:event_lblBanHangMouseClicked
 
     /**
      * @param args the command line arguments

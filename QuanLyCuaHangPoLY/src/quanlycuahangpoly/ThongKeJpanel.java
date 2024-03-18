@@ -335,7 +335,7 @@ public class ThongKeJpanel extends javax.swing.JPanel {
             .addComponent(tabDoanhThu)
         );
 
-        cboNam.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024" }));
+        cboNam.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2024", "2025" }));
         cboNam.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cboNamMouseClicked(evt);
