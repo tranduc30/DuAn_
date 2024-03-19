@@ -117,6 +117,7 @@ public class main extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.LINE_AXIS));
 
         jPanel4.setBackground(new java.awt.Color(62, 74, 88));
@@ -449,7 +450,7 @@ public class main extends javax.swing.JFrame {
 
         jPanel3.add(jPanel4);
 
-        pnscrene.setBackground(new java.awt.Color(241, 241, 241));
+        pnscrene.setBackground(new java.awt.Color(255, 255, 255));
         pnscrene.setPreferredSize(new java.awt.Dimension(1159, 0));
         pnscrene.setLayout(new java.awt.BorderLayout());
         jPanel3.add(pnscrene);
@@ -506,7 +507,7 @@ public class main extends javax.swing.JFrame {
         resetColor(lblThongke);
         resetColor(lblKhuyenMai);
         resetColor(lblKhachHang);
-        showPanel(new TrangChuJPanel());
+        showPanel(new QuanLySanPhamJPanel());
     }//GEN-LAST:event_pnSanPhamMouseClicked
 
     private void pnBanHangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnBanHangMouseClicked
@@ -550,7 +551,7 @@ public class main extends javax.swing.JFrame {
         resetColor(lblThongke);
         resetColor(lblKhuyenMai);
         resetColor(lblSanPham);
-//        showPanel(new NhanVienJpanel());
+        showPanel(new NhanVienJpanel());
     }//GEN-LAST:event_lblNhanVienMouseClicked
 
     private void pnNhanVienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnNhanVienMouseClicked
@@ -572,7 +573,7 @@ public class main extends javax.swing.JFrame {
         resetColor(lblThongke);
         resetColor(lblKhuyenMai);
         resetColor(lblSanPham);
-//        showPanel(new NhanVienJpanel());
+        showPanel(new NhanVienJpanel());
     }//GEN-LAST:event_pnNhanVienMouseClicked
 
     private void lblKhachHangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHangMouseClicked
@@ -595,7 +596,7 @@ public class main extends javax.swing.JFrame {
         resetColor(lblThongke);
         resetColor(lblKhuyenMai);
         resetColor(lblSanPham);
-//        showPanel(new KhachHangJPanel());
+        showPanel(new KhachHangJPanel());
     }//GEN-LAST:event_lblKhachHangMouseClicked
 
     private void pnKhachHangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnKhachHangMouseClicked
@@ -617,7 +618,7 @@ public class main extends javax.swing.JFrame {
         resetColor(lblThongke);
         resetColor(lblKhuyenMai);
         resetColor(lblSanPham);
-//        showPanel(new KhachHangJPanel());
+        showPanel(new KhachHangJPanel());
     }//GEN-LAST:event_pnKhachHangMouseClicked
 
     private void pnHoaDonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnHoaDonMouseClicked
@@ -661,7 +662,7 @@ public class main extends javax.swing.JFrame {
         resetColor(lblThongke);
         resetColor(lblNhanVien);
         resetColor(lblSanPham);
-//        showPanel(new KhuyenMaiJPanel());
+        showPanel(new KhuyenMaiJPanel());
     }//GEN-LAST:event_lblKhuyenMaiMouseClicked
 
     private void pnKhuyenMaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnKhuyenMaiMouseClicked
@@ -683,7 +684,7 @@ public class main extends javax.swing.JFrame {
         resetColor(lblThongke);
         resetColor(lblNhanVien);
         resetColor(lblSanPham);
-//        showPanel(new KhuyenMaiJPanel());
+        showPanel(new KhuyenMaiJPanel());
     }//GEN-LAST:event_pnKhuyenMaiMouseClicked
 
     private void lblThongkeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThongkeMouseClicked
@@ -771,7 +772,7 @@ public class main extends javax.swing.JFrame {
         resetColor(lblThongke);
         resetColor(lblKhuyenMai);
         resetColor(lblKhachHang);
-//        showPanel(new QuanLySanPhamJPanel());
+        showPanel(new QuanLySanPhamJPanel());
     }//GEN-LAST:event_lblSanPhamMouseClicked
 
     private void lblTrangChuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTrangChuMouseClicked

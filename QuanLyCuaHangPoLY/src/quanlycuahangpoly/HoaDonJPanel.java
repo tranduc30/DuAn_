@@ -66,14 +66,15 @@ public class HoaDonJPanel extends javax.swing.JPanel {
         btnTimKiem = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_hoaDonCT = new javax.swing.JTable();
-        btnFirstPage = new javax.swing.JButton();
-        btnPrev = new javax.swing.JButton();
         pageLabel = new javax.swing.JLabel();
-        btnNext = new javax.swing.JButton();
-        btnLastPage = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         btnExport = new javax.swing.JButton();
+        btnFirstPage = new javax.swing.JButton();
+        btnPrev = new javax.swing.JButton();
+        btnNext = new javax.swing.JButton();
+        btnLastPage = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -81,8 +82,9 @@ public class HoaDonJPanel extends javax.swing.JPanel {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel1.setText("Hóa Đơn");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(396, 6, -1, -1));
+        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel1.setText("HOÁ ĐƠN");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jLabel2.setText("Tìm kiếm hóa đơn");
@@ -131,7 +133,7 @@ public class HoaDonJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tbl_HoaDon);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 862, 143));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 1070, 170));
 
         btnTimKiem.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnTimKiem.setText("Tìm kiếm");
@@ -163,40 +165,8 @@ public class HoaDonJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tbl_hoaDonCT);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, 862, 144));
-
-        btnFirstPage.setText("|<");
-        btnFirstPage.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFirstPageActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnFirstPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, -1, -1));
-
-        btnPrev.setText("<");
-        btnPrev.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPrevActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnPrev, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 140, 50, -1));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, 1070, 170));
         jPanel1.add(pageLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 260, -1, -1));
-
-        btnNext.setText(">");
-        btnNext.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNextActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 140, 50, -1));
-
-        btnLastPage.setText(">|");
-        btnLastPage.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLastPageActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnLastPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 140, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 0, 0));
@@ -206,83 +176,52 @@ public class HoaDonJPanel extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 0, 0));
         jLabel5.setText("Hóa Đơn Chi Tiết");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, -1, -1));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         btnExport.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnExport.setText("Export PDF");
-        btnExport.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExportActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnExport, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, -1, -1));
+        jPanel2.add(btnExport);
+
+        btnFirstPage.setText("|<");
+        jPanel2.add(btnFirstPage);
+
+        btnPrev.setText("<");
+        jPanel2.add(btnPrev);
+
+        btnNext.setText(">");
+        jPanel2.add(btnNext);
+
+        btnLastPage.setText(">|");
+        jPanel2.add(btnLastPage);
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 590, 60));
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportActionPerformed
-        printToPDF();
-    }//GEN-LAST:event_btnExportActionPerformed
-
-    private void btnLastPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLastPageActionPerformed
-//        int totalRecords = service.getTotalHoaDon();
-//        int totalPages = (int) Math.ceil((double) totalRecords / recordsPerPage);
-//
-//        if (currentPage < totalPages) {
-//            currentPage = totalPages;
-////            filterHoaDon();
-//            //this.fillTable(service.getAll());
-//        }
-    }//GEN-LAST:event_btnLastPageActionPerformed
-
-    private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
-//        int totalRecords = service.getTotalHoaDon();
-//        int totalPages = (int) Math.ceil((double) totalRecords / recordsPerPage);
-//
-//        if (currentPage < totalPages) {
-//            currentPage++;
-////            filterHoaDon();
-//            //this.fillTable(service.getAll());
-//        }
-    }//GEN-LAST:event_btnNextActionPerformed
-
-    private void btnPrevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrevActionPerformed
-//        if (currentPage > 1) {
-//            currentPage--;
-////            filterHoaDon();
-//            //this.fillTable(service.getAll());
-//        }
-    }//GEN-LAST:event_btnPrevActionPerformed
-
-    private void btnFirstPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirstPageActionPerformed
-//        if (currentPage > 1) {
-//            currentPage = 1;
-////            filterHoaDon();
-//            //this.fillTable(service.getAll());
-//        }
-    }//GEN-LAST:event_btnFirstPageActionPerformed
-
     private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
-//        filterHoaDon();
-//this.fillTable(service.timKiem(txt_timKiem.getText()));
-//        String keySearch = txt_timKiem.getText();
+        //        filterHoaDon();
+        //this.fillTable(service.timKiem(txt_timKiem.getText()));
+        //        String keySearch = txt_timKiem.getText();
 
-// làm lại
-//        Integer payMethod = cbo_HinhThucThanhToan.getSelectedIndex();
-//        int totalRecords = service.getTotalFilteredHoaDon(null, null, keySearch, payMethod);
-//        int totalPages = (int) Math.ceil((double) totalRecords / recordsPerPage);
-//        pageLabel.setText("Trang: " + currentPage + " / " + totalPages);
-//        System.out.println("current page: " + currentPage);
+        // làm lại
+        //        Integer payMethod = cbo_HinhThucThanhToan.getSelectedIndex();
+        //        int totalRecords = service.getTotalFilteredHoaDon(null, null, keySearch, payMethod);
+        //        int totalPages = (int) Math.ceil((double) totalRecords / recordsPerPage);
+        //        pageLabel.setText("Trang: " + currentPage + " / " + totalPages);
+        //        System.out.println("current page: " + currentPage);
     }//GEN-LAST:event_btnTimKiemActionPerformed
 
     private void tbl_HoaDonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_HoaDonMouseClicked
         // Hiện hóa đơn chi tiết
-//        this.showHDCT();
+        //        this.showHDCT();
     }//GEN-LAST:event_tbl_HoaDonMouseClicked
 
     private void txt_timKiemKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_timKiemKeyReleased
         // Tìm kiếm
-//        this.fillTable(service.timKiem(txt_timKiem.getText()));
+        //        this.fillTable(service.timKiem(txt_timKiem.getText()));
     }//GEN-LAST:event_txt_timKiemKeyReleased
 
     private void txt_timKiemKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_timKiemKeyPressed
@@ -365,6 +304,7 @@ public class HoaDonJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel pageLabel;

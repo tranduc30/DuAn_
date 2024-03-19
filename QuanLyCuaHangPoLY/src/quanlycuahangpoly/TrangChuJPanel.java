@@ -28,6 +28,8 @@ public class TrangChuJPanel extends javax.swing.JPanel {
 
         jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/thiet-ke-cafe-up-coffee+(02).jpg"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
