@@ -7,6 +7,9 @@ package quanlycuahangpoly;
 //import Model.HoaDonCT;
 //import Model.HoaDonCT1;
 //import Service.HoaDonDAO;
+import Model.HoaDonCT;
+import Model.HoaDonCT1;
+import Service.HoaDonDAO;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.FontFactory;
@@ -37,14 +40,12 @@ import javax.swing.table.DefaultTableModel;
 public class HoaDonJPanel extends javax.swing.JPanel {
 
     DefaultTableModel mol = new DefaultTableModel();
-//    HoaDonDAO service = new HoaDonDAO();
+    HoaDonDAO service = new HoaDonDAO();
     int index = -1;
     String maHD;
     public HoaDonJPanel() {
         initComponents();
-//        this.fillTable(service.getAll());
-//        fillTableWithPagination();
-//         this.fillTable(service.getAll());
+        fillTable(service.timKiem(txt_timKiem.getText()));
 
     }
 
@@ -182,6 +183,11 @@ public class HoaDonJPanel extends javax.swing.JPanel {
 
         btnExport.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnExport.setText("Export PDF");
+        btnExport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExportActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnExport);
 
         btnFirstPage.setText("|<");
@@ -202,26 +208,20 @@ public class HoaDonJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
-        //        filterHoaDon();
-        //this.fillTable(service.timKiem(txt_timKiem.getText()));
-        //        String keySearch = txt_timKiem.getText();
+//                filterHoaDon();
+        this.fillTable(service.timKiem(txt_timKiem.getText()));
+                String keySearch = txt_timKiem.getText();
 
-        // làm lại
-        //        Integer payMethod = cbo_HinhThucThanhToan.getSelectedIndex();
-        //        int totalRecords = service.getTotalFilteredHoaDon(null, null, keySearch, payMethod);
-        //        int totalPages = (int) Math.ceil((double) totalRecords / recordsPerPage);
-        //        pageLabel.setText("Trang: " + currentPage + " / " + totalPages);
-        //        System.out.println("current page: " + currentPage);
     }//GEN-LAST:event_btnTimKiemActionPerformed
 
     private void tbl_HoaDonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_HoaDonMouseClicked
         // Hiện hóa đơn chi tiết
-        //        this.showHDCT();
+                this.showHDCT();
     }//GEN-LAST:event_tbl_HoaDonMouseClicked
 
     private void txt_timKiemKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_timKiemKeyReleased
         // Tìm kiếm
-        //        this.fillTable(service.timKiem(txt_timKiem.getText()));
+//                this.fillTable(service.timKiem(txt_timKiem.getText()));
     }//GEN-LAST:event_txt_timKiemKeyReleased
 
     private void txt_timKiemKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_timKiemKeyPressed
@@ -231,6 +231,11 @@ public class HoaDonJPanel extends javax.swing.JPanel {
     private void txt_timKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_timKiemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_timKiemActionPerformed
+
+    private void btnExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportActionPerformed
+        // TODO add your handling code here:
+        printToPDF();
+    }//GEN-LAST:event_btnExportActionPerformed
 
     private void printToPDF() {
         int selectedRow = tbl_HoaDon.getSelectedRow();
@@ -313,21 +318,21 @@ public class HoaDonJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txt_timKiem;
     // End of variables declaration//GEN-END:variables
 
-//    private void fillTablett(List<HoaDonCT> list) {
-//        mol = (DefaultTableModel) tbl_HoaDon.getModel();
-//        mol.setRowCount(0);
-//        for (HoaDonCT x : list) {
-//            if (x.getThanhTien() != 0) {
-//                mol.addRow(new Object[]{
-//                    x.getMaHD(),
-//                    x.getTenKH(),
-//                    x.getTenNV(),
-//                    x.getThanhTien(),
-//                    x.getPTTT(),
-//                    x.getNgayTT(),});
-//            }
-//        }
-//    }
+    private void fillTablett(List<HoaDonCT> list) {
+        mol = (DefaultTableModel) tbl_HoaDon.getModel();
+        mol.setRowCount(0);
+        for (HoaDonCT x : list) {
+            if (x.getThanhTien() != 0) {
+                mol.addRow(new Object[]{
+                    x.getMaHD(),
+                    x.getTenKH(),
+                    x.getTenNV(),
+                    x.getThanhTien(),
+                    x.getPTTT(),
+                    x.getNgayTT(),});
+            }
+        }
+    }
     
     
 //bỏ qua
@@ -388,71 +393,71 @@ public class HoaDonJPanel extends javax.swing.JPanel {
     //bot qua
     
 
-//    private void fillTable(List<HoaDonCT> list) {
-//        mol = (DefaultTableModel) tbl_HoaDon.getModel();
-//        mol.setRowCount(0);
-//        for (HoaDonCT x : list) {
-//            mol.addRow(new Object[]{
-//                x.getMaHD(),
-//                x.getTenKH(),
-//                x.getTenNV(),
-//                x.getThanhTien(),
-//                x.getPTTT(),
-//                x.getNgayTT(),});
-//        }
-////        int totalPages = (int) Math.ceil((double) service.getTotalHoaDon() / recordsPerPage);
-////        pageLabel.setText("Trang: " + currentPage + " / " + totalPages);
-//    }
-//
-//    private void fillTableWithPagination() {
-//        mol = (DefaultTableModel) tbl_HoaDon.getModel();
-//        mol.setRowCount(0);
-//        List<HoaDonCT> list = service.getAllByPage(currentPage, recordsPerPage);
-//        fillTable(list);
-//        int totalRecords = service.getTotalHoaDon(); // Update total records
-//        int totalPages = (int) Math.ceil((double) totalRecords / recordsPerPage); // Recalculate total pages
+    private void fillTable(List<HoaDonCT> list) {
+        mol = (DefaultTableModel) tbl_HoaDon.getModel();
+        mol.setRowCount(0);
+        for (HoaDonCT x : list) {
+            mol.addRow(new Object[]{
+                x.getMaHD(),
+                x.getTenKH(),
+                x.getTenNV(),
+                x.getThanhTien(),
+                x.getPTTT(),
+                x.getNgayTT(),});
+        }
+//        int totalPages = (int) Math.ceil((double) service.getTotalHoaDon() / recordsPerPage);
 //        pageLabel.setText("Trang: " + currentPage + " / " + totalPages);
-//    }
-//
-//    private int currentPage = 1;
-//    private int recordsPerPage = 5;
-//
-//    private void fillTableByPage() {
-//        List<HoaDonCT> list = service.getAllByPage(currentPage, recordsPerPage);
-//        mol = (DefaultTableModel) tbl_HoaDon.getModel();
-//        mol.setRowCount(0);
-//        for (HoaDonCT x : list) {
-//            mol.addRow(new Object[]{
-//                x.getMaHD(),
-//                x.getTenKH(),
-//                x.getTenNV(),
-//                x.getThanhTien(),
-//                x.getPTTT(),
-//                x.getNgayTT(),});
-//        }
-//    }
-//
-//    private void showHDCT() {
-//        fillHDCTTable();
-//    }
-//
-//    private void fillHDCTTable() {
-//        index = tbl_HoaDon.getSelectedRow();
-//        if (index != -1) {
-//            HoaDonCT hd = service.timKiem(txt_timKiem.getText()).get(index);
-//            maHD = hd.getMaHD();
-//            DefaultTableModel molHDCT = (DefaultTableModel) tbl_hoaDonCT.getModel();
-//            molHDCT.setRowCount(0);
-//            for (HoaDonCT1 hoaDonCT1 : service.getAllCTHD(maHD)) {
-//                molHDCT.addRow(new Object[]{
-//                    hoaDonCT1.getMaHDCT(),
-//                    hoaDonCT1.getMaVi(),
-//                    hoaDonCT1.getTenVi(),
-//                    hoaDonCT1.getSoLuong(),
-//                    hoaDonCT1.getTongTien()
-//                });
-//            }
-//        }
-//    }
+    }
+
+    private void fillTableWithPagination() {
+        mol = (DefaultTableModel) tbl_HoaDon.getModel();
+        mol.setRowCount(0);
+        List<HoaDonCT> list = service.getAllByPage(currentPage, recordsPerPage);
+        fillTable(list);
+        int totalRecords = service.getTotalHoaDon(); // Update total records
+        int totalPages = (int) Math.ceil((double) totalRecords / recordsPerPage); // Recalculate total pages
+        pageLabel.setText("Trang: " + currentPage + " / " + totalPages);
+    }
+
+    private int currentPage = 1;
+    private int recordsPerPage = 5;
+
+    private void fillTableByPage() {
+        List<HoaDonCT> list = service.getAllByPage(currentPage, recordsPerPage);
+        mol = (DefaultTableModel) tbl_HoaDon.getModel();
+        mol.setRowCount(0);
+        for (HoaDonCT x : list) {
+            mol.addRow(new Object[]{
+                x.getMaHD(),
+                x.getTenKH(),
+                x.getTenNV(),
+                x.getThanhTien(),
+                x.getPTTT(),
+                x.getNgayTT(),});
+        }
+    }
+
+    private void showHDCT() {
+        fillHDCTTable();
+    }
+
+    private void fillHDCTTable() {
+        index = tbl_HoaDon.getSelectedRow();
+        if (index != -1) {
+            HoaDonCT hd = service.timKiem(txt_timKiem.getText()).get(index);
+            maHD = hd.getMaHD();
+            DefaultTableModel molHDCT = (DefaultTableModel) tbl_hoaDonCT.getModel();
+            molHDCT.setRowCount(0);
+            for (HoaDonCT1 hoaDonCT1 : service.getAllCTHD(maHD)) {
+                molHDCT.addRow(new Object[]{
+                    hoaDonCT1.getMaHDCT(),
+                    hoaDonCT1.getMaVi(),
+                    hoaDonCT1.getTenVi(),
+                    hoaDonCT1.getSoLuong(),
+                    hoaDonCT1.getTongTien()
+                });
+            }
+        }
+    }
 
 }

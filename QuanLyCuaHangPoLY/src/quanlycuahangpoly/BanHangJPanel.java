@@ -4,17 +4,28 @@
  */
 package quanlycuahangpoly;
 
+import Model.SanPham;
+import Service.SanPhamDAO;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Windows
  */
 public class BanHangJPanel extends javax.swing.JPanel {
-
+    SanPhamDAO service = new SanPhamDAO();
+String tenNV, email;
+ DefaultTableModel mol = new DefaultTableModel();
     /**
      * Creates new form BanHangJPanel
      */
     public BanHangJPanel(String tenNV, String email) {
         initComponents();
+        this.tenNV = tenNV;
+        this.email = email;
+//        txt_KhachHang1.setText("Khách Lẻ");
+        this.fillTableSP(service.seachSP(txt_TimKiemSP.getText()));
     }
 
     /**
@@ -509,4 +520,21 @@ public class BanHangJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txt_NhanVien;
     private javax.swing.JTextField txt_TimKiemSP;
     // End of variables declaration//GEN-END:variables
+
+     // Code fillTable : 
+    private void fillTableSP(List<SanPham> list) {
+        mol = (DefaultTableModel) tbl_SanPham.getModel();
+        mol.setRowCount(0);
+        for (SanPham x : list) {
+            mol.addRow(new Object[]{
+                x.getMaVi(),
+                x.getTenVi(),
+                x.getKieuDang(),
+                x.getThuongHieu(),
+                x.getMauSac(),
+                x.getSoLuong(),
+                x.getGiaBan()
+            });
+        }
+    }
 }
