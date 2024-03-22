@@ -4,17 +4,14 @@
  */
 package quanlycuahangpoly;
 
-//import Model.HoaDonCT;
-//import Model.HoaDonCT1;
-//import Model.TKDoanhThu_View;
-//import Model.TKSanPham_View;
-//import Model.TKTongQuan_View;
-//import Service.ITKDoanhThu_service;
-//import Service.ITKSanPham_Service;
-//import Service.ITKTongQuan_Service;
-//import Service.TKDoanhThu_Service;
-//import Service.TKSanPham_Service;
-//import Service.TKTongQuan_service;
+import Model.TKDoanhThu_View;
+import Model.TKSanPham_View;
+import Service.ITKDoanhThu_service;
+import Service.ITKSanPham_Service;
+import Service.ITKTongQuan_Service;
+import Service.TKDoanhThu_Service;
+import Service.TKSanPham_Service;
+import Service.TKTongQuan_service;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import javax.swing.JPanel;
@@ -36,13 +33,11 @@ public class ThongKeJpanel extends javax.swing.JPanel {
     SimpleDateFormat dateFM = new SimpleDateFormat("yyyy-MM-dd");
     private JPanel panel;
     DefaultTableModel mol;
-//    ITKSanPham_Service tkSP_sv = new TKSanPham_Service();
-//    ITKTongQuan_Service tkTQ_Service = new TKTongQuan_service();
-//    ITKDoanhThu_service tKDoanhThu_service = new TKDoanhThu_Service();
-//    ITKThuocTinh_Service tk_TTSP = new TKThuocTinh_Sevice();
-//    ISanPham_Service sp_sv = new SanPham_service();
-//    List<TKDoanhThu_View> listDoanhThuThang;
-//    List<TKSanPham_View> listTkSP;
+    ITKSanPham_Service tkSP_sv = new TKSanPham_Service();
+    ITKTongQuan_Service tkTQ_Service = new TKTongQuan_service();
+    ITKDoanhThu_service tKDoanhThu_service = new TKDoanhThu_Service();
+    List<TKDoanhThu_View> listDoanhThuThang;
+    List<TKSanPham_View> listTkSP;
     NumberFormat numberFM = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
     public String ketthuc = "", batDau = "";
 
@@ -51,13 +46,7 @@ public class ThongKeJpanel extends javax.swing.JPanel {
      */
     public ThongKeJpanel() {
         initComponents();
-//        filltblTKSP();
-//        testbarchar(2023);
-//        txtBatDau.setEnabled(false);
-//        txtKetThuc.setEnabled(false);
-//        btnTK.setEnabled(false);
-//        TKTongQuan_View tk = tkTQ_Service.tkHomNay();
-//        fillTKTongQuan(tk.getDonHang(), tk.getSanPham(), tk.getDoanhthu());
+        testbarchar(2024);
     }
 
     /**
@@ -473,66 +462,37 @@ public class ThongKeJpanel extends javax.swing.JPanel {
 
     private void cboLoaiTGItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboLoaiTGItemStateChanged
         // TODO add your handling code here:
-//        if (cboLoaiTG.getItemCount() > 0) {
-//            if (cboLoaiTG.getSelectedIndex() == 0) {
-//
-//                TKTongQuan_View tk = tkTQ_Service.tkHomNay();
-//                txtBatDau.setEnabled(false);
-//                txtKetThuc.setEnabled(false);
-//                btnTK.setEnabled(false);
-//
-//                fillTKTongQuan(tk.getDonHang(), tk.getSanPham(), tk.getDoanhthu());
-//            } else {
-//                pnlLoaiThoiGian.setEnabled(true);
-//                txtBatDau.setEnabled(true);
-//                txtKetThuc.setEnabled(true);
-//                btnTK.setEnabled(true);
-//            }
-//        }
+
     }//GEN-LAST:event_cboLoaiTGItemStateChanged
 
     private void btnTKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTKActionPerformed
         // TODO add your handling code here:
         // tim kiem
 
-//        TKTongQuan_View tkTQ = tkTQ_Service.tkTheoNgay(dateFM.format(txtBatDau.getDate()), dateFM.format(txtKetThuc.getDate()));
-//        ketthuc = dateFM.format(txtBatDau.getDate());
-//        batDau = dateFM.format(txtKetThuc.getDate());
-//        fillTKTongQuan(tkTQ.getDonHang(), tkTQ.getSanPham(), tkTQ.getDoanhthu());
     }//GEN-LAST:event_btnTKActionPerformed
 
     private void cboNamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cboNamMouseClicked
         // TODO add your handling code here:
-//        filltblTKSP();
-//        testbarchar(Integer.parseInt(cboNam.getSelectedItem().toString()));
+
     }//GEN-LAST:event_cboNamMouseClicked
 
     private void cboNamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboNamActionPerformed
         // TODO add your handling code here:
-//        filltblTKSP();
-//        testbarchar(Integer.parseInt(cboNam.getSelectedItem().toString()));
     }//GEN-LAST:event_cboNamActionPerformed
 
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
         // TODO add your handling code here:
-//        filltblTKSP();
-//        testbarchar(Integer.parseInt(cboNam.getSelectedItem().toString()));
+
     }//GEN-LAST:event_jPanel1MouseClicked
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
         // TODO add your handling code here:
-//        if (jTabbedPane1.getSelectedIndex() == 0) {
-////            filltblDoanhThuThang(Integer.parseInt(cboNam.getSelectedItem().toString()));
-//            filltblTKSP();
-//        }
+
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
     private void tabDoanhThuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabDoanhThuMouseClicked
         // TODO add your handling code here:
-//        if (tabDoanhThu.getSelectedIndex() == 1) {
-//            testbarchar(Integer.parseInt(cboNam.getSelectedItem().toString()));
-//
-//        }
+
     }//GEN-LAST:event_tabDoanhThuMouseClicked
 
 
@@ -570,42 +530,18 @@ public class ThongKeJpanel extends javax.swing.JPanel {
     private com.toedter.calendar.JDateChooser txtKetThuc;
     // End of variables declaration//GEN-END:variables
 
-//    private void fillTKTongQuan(int donHang, int sanPham, float doanhthu) {
-//        lbldoanhthu.setText(numberFM.format(doanhthu));
-//        lbdonhang.setText(donHang + "");
-//        lblsanpham.setText(sanPham + "");
-//    }
-//
-//    public void filltblTKSP() {
-//        listTkSP = tkSP_sv.getTKSanPham();
-//        mol = (DefaultTableModel) tbl_TKSP.getModel();
-//        mol.setRowCount(0);
-//        for (TKSanPham_View t : listTkSP) {
-//            mol.addRow(new Object[]{t.getMaSP(), t.getMachitiet(), t.getTen(), t.getThuonghieu(), t.getNhasanxuat(), t.getChatlieu(), t.getLoaivi(), t.getSlBan()});
-//        }
-//    }
-//
-//    public void testbarchar(int nam) {
-//        listDoanhThuThang = tKDoanhThu_service.getTKDoanhThu(nam);
-//        DefaultCategoryDataset dbSet = new DefaultCategoryDataset();
-//        for (TKDoanhThu_View t : listDoanhThuThang) {
-//            dbSet.setValue(t.getTongDoanhThu(), "Doanh Thu", t.getThang() + "");
-//        }
-//        JFreeChart Barchar = ChartFactory.createBarChart("Doanh Thu Theo Năm", "Thang", "Doanh Thu", dbSet, PlotOrientation.VERTICAL, false, false, false);
-//        ChartPanel chartPanel = new ChartPanel(Barchar);
-//        chartPanel.setPreferredSize(new java.awt.Dimension(100, 100));
-//        pnlBieuDo.removeAll();
-//        pnlBieuDo.add(chartPanel);
-//  
-//    }
-    
-    //bỏ qua
-//      public void filltblDoanhThuThang(int nam) {
-//        listDoanhThuThang = tKDoanhThu_service.getTKDoanhThu(nam);
-//        mol = (DefaultTableModel) tblTK_Thang.getModel();
-//        mol.setRowCount(0);
-//        for (TKDoanhThu_View t : listDoanhThuThang) {
-//            mol.addRow(new Object[]{t.getThang(), t.getSlSanPham(), numberFM.format(t.getTongGiaBan()), numberFM.format(t.getTongGiaGia()), numberFM.format(t.getTongDoanhThu())});
-//        }
-//    }
+    public void testbarchar(int nam) {
+        listDoanhThuThang = tKDoanhThu_service.getTKDoanhThu(nam);
+        DefaultCategoryDataset dbSet = new DefaultCategoryDataset();
+        for (TKDoanhThu_View t : listDoanhThuThang) {
+            dbSet.setValue(t.getTongDoanhThu(), "Doanh Thu", t.getThang() + "");
+        }
+        JFreeChart Barchar = ChartFactory.createBarChart("Doanh Thu Theo Năm", "Thang", "Doanh Thu", dbSet, PlotOrientation.VERTICAL, false, false, false);
+        ChartPanel chartPanel = new ChartPanel(Barchar);
+        chartPanel.setPreferredSize(new java.awt.Dimension(100, 100));
+        pnlBieuDo.removeAll();
+        pnlBieuDo.add(chartPanel);
+
+    }
+
 }
