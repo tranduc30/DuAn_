@@ -4,7 +4,7 @@
  */
 package quanlycuahangpoly.Dao;
 
-import Hepper.JDBCHeper;
+import quanlycuahang.Hepper.JDBCHeper;
 import Model.HoaDon;
 import Model.HoaDon1;
 import Repository.DBconnect;

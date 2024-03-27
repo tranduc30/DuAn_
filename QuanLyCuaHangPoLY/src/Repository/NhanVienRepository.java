@@ -4,7 +4,7 @@
  */
 package Repository;
 
-import Hepper.JDBCHeper;
+import quanlycuahang.Hepper.JDBCHeper;
 import Model.NhanVien;
 import Model.NhanVien1;
 import java.sql.ResultSet;

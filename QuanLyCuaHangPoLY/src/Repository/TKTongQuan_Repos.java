@@ -4,7 +4,7 @@
  */
 package Repository;
 
-import Hepper.JDBCHeper;
+import quanlycuahang.Hepper.JDBCHeper;
 import Model.TKTongQuan_Model;
 import java.sql.*;
 
